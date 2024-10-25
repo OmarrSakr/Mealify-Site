@@ -2,7 +2,7 @@
 
 ![Mealify](https://github.com/user-attachments/assets/77bb8fcb-e9e9-4fa5-97ef-28e4706a9d98)
 
-Mealify is a responsive and interactive website for a food business, focusing on promoting delicious
+`Mealify` is a responsive and interactive website for a food business, focusing on promoting delicious
 meals, showcasing professional chefs, and featuring an enticing gallery of dishes. The website is
 designed to be both user-friendly and visually appealing, with integrated dark mode and smooth
 navigation.
