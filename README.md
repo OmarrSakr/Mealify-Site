@@ -71,7 +71,7 @@ navigation.
 
 ## How to Use 🚀  
 
-We welcome contributions to *Mealify*! Here’s how you can help:
+We welcome `contributions` to *Mealify*! Here’s how you can help:
 1. *Fork the repository* - Click the "Fork" button at the top right of the repository page.
 2. *Clone your fork* - Use the command:
    
