@@ -1,6 +1,6 @@
 # Mealify 🍽 
 
-![Bakery](https://github.com/user-attachments/assets/cb850ca1-1c3b-47ad-9e16-191711dd2df6)
+![Mealify](https://github.com/user-attachments/assets/99adf7aa-2d4f-46e0-8245-1ea8ae727fb8)
 
 Mealify is a responsive and interactive website for a food business, focusing on promoting delicious
 meals, showcasing professional chefs, and featuring an enticing gallery of dishes. The website is
