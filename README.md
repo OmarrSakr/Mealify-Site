@@ -71,7 +71,7 @@ We welcome contributions to *Mealify*! Here’s how you can help:
 2. *Clone your fork* - Use the command:
    
    ```bash
-   git clone https://github.com/your-username/Mealify.git
+   git clone https://github.com/OmarrSakr/Mealify-Site.git
 
 ---
 
