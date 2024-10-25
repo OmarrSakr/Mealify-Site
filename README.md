@@ -9,6 +9,11 @@ navigation.
 
 ---
 
+## Live Demo 🌐
+- Check out the live demo of the project at [Mealify Site](https://omarrsakr.github.io/Fokir-Site/).
+
+---
+
 ## 🛠 Website Contents
 <code> 1. Responsive Design:</code>
    - Fully responsive layout across devices and screen sizes.
