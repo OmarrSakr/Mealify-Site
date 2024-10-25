@@ -81,20 +81,26 @@ We welcome contributions to *Mealify*! Here’s how you can help:
 ---
 
 ## 📂 Project Structure 
-
-*Mealify/*  
+```
+# Mealify  
 │  
 ├── 📂 *CSS/*  
-│   ├── all.min.css         — Font Awesome styles  
-│   ├── darkmode.css        — Dark mode styles  
-│   ├── general.css         — General styling  
-│   ├── media.css           — Media queries for responsiveness  
-│   └── style.css           — Main stylesheet  
+│   ├── 🎨 all.min.css         — Font Awesome styles  
+│   ├── 🌙 darkmode.css        — Dark mode styles  
+│   ├── 🖌️ general.css         — General styling  
+│   ├── 📱 media.css           — Media queries for responsiveness  
+│   └── 📄 style.css           — Main stylesheet  
 │  
 ├── 📂 *images-Mealify/*    — Images for the gallery, chefs, and home section  
 │  
+├── 📂 *webfonts/*           — Fonts used in the project  
+│   ├── fontawesome-webfont.woff2  
+│   ├── fontawesome-webfont.woff  
+│   └── custom-font.ttf  
+│  
 ├── 📄 *index.html*         — Main HTML file  
 └── 📄 *README.md*          — Project documentation (this file)  
+```
 
 ---
 
