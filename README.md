@@ -84,6 +84,8 @@ We welcome contributions to *Mealify*! Here’s how you can help:
 ```
 # Mealify  
 │  
+├── 📄 *index.html*         — Main HTML file  
+│
 ├── 📂 *CSS/*  
 │   ├── 🎨 all.min.css         — Font Awesome styles  
 │   ├── 🌙 darkmode.css        — Dark mode styles  
@@ -98,8 +100,8 @@ We welcome contributions to *Mealify*! Here’s how you can help:
 │   ├── fontawesome-webfont.woff  
 │   └── custom-font.ttf  
 │  
-├── 📄 *index.html*         — Main HTML file  
 └── 📄 *README.md*          — Project documentation (this file)  
+  
 ```
 
 ---
