@@ -1,0 +1,255 @@
+/* !Dark Mode */
+
+#mode {
+  display: none;
+}
+
+.light-mode {
+  display: none;
+  cursor: pointer;
+}
+
+
+.dark-mode {
+  cursor: pointer;
+}
+
+
+body:has(#mode:checked) .dark-mode {
+  display: none;
+}
+
+body:has(#mode:checked) .light-mode {
+  display: flex;
+}
+
+:root:has(#mode:checked) {
+  --color-light-black-dark: #171717;
+  --color-light-grey-dark: #252525;
+  --color-deep-grey-dark: #202020;
+  --color-light-highlight: #c17e1f;
+  --color-main-light: #fff;
+  --color-text-chefs-dark: #9f9f9f;
+  --color-text-details-dark: #ADADAD;
+}
+
+/* *################# navbar Section  */
+
+body:has(#mode:checked) .navbar {
+  background-color: var(--color-light-black-dark);
+  color: var(--color-main-light);
+}
+
+body:has(#mode:checked) .logo a,
+body:has(#mode:checked) .icon-moon i {
+  color: #FFF;
+}
+
+body:has(#mode:checked) .list ul a {
+  color: var(--color-text-chefs-dark);
+}
+
+body:has(#mode:checked) .list ul a:hover,
+body:has(#mode:checked) .list ul a:focus {
+  color: var(--color-deep-grey-dark);
+  /* --color-main-light */
+}
+
+body:has(#mode:checked) .navbar .list a::before {
+  background-color: var(--color-light-highlight);
+}
+
+body:has(#mode:checked) .navbar .logo a::after {
+  color: var(--color-light-highlight);
+}
+
+/* *################# header Section  */
+body:has(#mode:checked) .header {
+  background-color: #252525;
+}
+
+body:has(#mode:checked) .header .part-one h2 {
+  color: #FFF;
+}
+
+body:has(#mode:checked) .header .part-one p {
+  color: var(--color-text-chefs-dark);
+}
+
+body:has(#mode:checked) .header .part-one .book {
+  background-color: var(--color-light-highlight);
+  color: #171717;
+}
+
+body:has(#mode:checked) .header .part-one .book:hover {
+  background-color: #b8711a;
+
+}
+
+body:has(#mode:checked) .header .part-one .watch {
+  color: #FFF;
+}
+
+body:has(#mode:checked) .header .part-one .watch div i {
+  color: #FFF;
+
+}
+
+body:has(#mode:checked) .header .part-one .watch div {
+  background-color: var(--color-light-black-dark);
+  background: linear-gradient(to right, var(--color-light-highlight) 0 50%, transparent 50% 100%);
+
+}
+
+body:has(#mode:checked) .header .container .watch:hover {
+  color: var(--color-light-highlight);
+}
+
+body:has(#mode:checked) .header .container .watch div i:hover {
+  color: var(--color-light-highlight);
+}
+
+body:has(#mode:checked) .header .container .watch .icon-watch::after {
+  background-color: var(--color-light-black-dark);
+}
+
+/* *################# Chefs Section  */
+body:has(#mode:checked) .chefs {
+  background-color: var(--color-deep-grey-dark);
+}
+
+body:has(#mode:checked) .chefs h2 {
+  color: var(--color-text-chefs-dark);
+}
+
+body:has(#mode:checked) .chefs p {
+  color: #FFF;
+}
+
+body:has(#mode:checked) .chefs p span {
+  color: var(--color-light-highlight);
+}
+
+body:has(#mode:checked) .chefs .cards .card-body {
+  background-color: var(--color-light-black-dark);
+}
+
+body:has(#mode:checked) .chefs .cards .card {
+  background-color: var(--color-light-black-dark);
+
+}
+
+body:has(#mode:checked) .chefs .card-body h3 {
+  color: #FFF;
+}
+
+body:has(#mode:checked) .chefs .container .card .main-img::after {
+  background-image: url(../images-Mealify/Cheafs/team-shape-dark.svg);
+}
+
+body:has(#mode:checked) .chefs .cards .card-body span {
+  color: var(--color-text-chefs-dark);
+}
+
+body:has(#mode:checked) .chefs .cards .card-body p {
+  color: var(--color-text-chefs-dark);
+}
+
+/* *################# gallery Section  */
+body:has(#mode:checked) .gallery {
+  background-color: var(--color-light-grey-dark);
+}
+
+body:has(#mode:checked) .gallery h2 {
+  color: var(--color-main-light);
+}
+
+body:has(#mode:checked) .gallery p {
+  color: #FFF;
+}
+
+body:has(#mode:checked) .gallery span {
+  color: var(--color-light-highlight);
+}
+
+/* *################# Contact Section  */
+body:has(#mode:checked) .contact {
+  background-color: var(--color-deep-grey-dark);
+}
+
+body:has(#mode:checked) .contact h2 {
+  color: var(--color-text-chefs-dark);
+}
+
+body:has(#mode:checked) .contact p {
+  color: #FFF;
+}
+
+body:has(#mode:checked) .contact a {
+  color: #FFF;
+}
+
+body:has(#mode:checked) .contact span {
+  color: var(--color-light-highlight);
+}
+
+/* &################# details Section  */
+
+body:has(#mode:checked) .contact .details .icon {
+  background-color: var(--color-light-highlight);
+}
+
+body:has(#mode:checked) .contact .details .icon i {
+  color: #0D0D0D;
+}
+
+body:has(#mode:checked) .contact h3 {
+  color: var(--color-text-details-dark);
+}
+
+body:has(#mode:checked) .contact .details .contact-item {
+  background-color: #0D0D0D;
+}
+
+/* &################# from Section  */
+body:has(#mode:checked) .contact form {
+  background-color: #171717;
+}
+
+body:has(#mode:checked) .contact form button {
+  background-color: var(--color-light-highlight);
+  color: #171717;
+}
+
+body:has(#mode:checked) .contact form button {
+  background-color: var(--color-light-highlight);
+  color: #171717;
+}
+
+body:has(#mode:checked) .contact .container form input:focus,
+body:has(#mode:checked) .contact .container form textarea:focus {
+  border-color: var(--color-light-highlight);
+}
+
+body:has(#mode:checked) .contact form button:hover {
+
+  background-color: #b8711a;
+}
+
+/* *################# Footer Section  */
+body:has(#mode:checked) .footer .title a span {
+  color: var(--color-light-highlight);
+}
+
+body:has(#mode:checked) .footer .part-two button {
+  background-color: var(--color-light-highlight);
+  color: #171717;
+}
+
+body:has(#mode:checked) .footer .part-two button:hover {
+  background-color: #b8711a;
+}
+
+body:has(#mode:checked) .footer .part-three i {
+  color: var(--color-light-highlight);
+}

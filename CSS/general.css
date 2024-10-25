@@ -1,0 +1,98 @@
+body {
+    margin: 0px;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    /*###### sometimes happen change */
+    font-family: var(--font-default);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a,
+span {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+::selection {
+    background-color: #d85454;
+    color: #f9ffff;
+}
+
+::-webkit-scrollbar {
+    width: .75rem;
+    background-color: #fff;
+    border-left: .125rem solid #eee;
+    box-shadow: 0px 0px 1.3125rem 0px #0003 inset;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #eee;
+    box-shadow: inset 0px 0px .625rem 0px #fff9f92b;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    box-shadow: 0px 0px .625rem 0px #eeeeee8c inset;
+    border-radius: .3125rem;
+    height: 6.25rem;
+}
+
+:root {
+    --color-secondary: #37373f;
+    --default-color: #212529;
+    --color-tertiary: #7f7f90;
+    --color-light-grey: #eee;
+    --primary-hue: 0;
+    --primary-saturation: 84%;
+    --primary-lightness: 44%;
+    --color-primary: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+    --light-hue: 0;
+    --light-saturation: 0%;
+    --light-lightness: 100%;
+    --color-light: hsl(var(--light-hue), var(--light-saturation), var(--light-lightness));
+    --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-primary: "Amatic SC", sans-serif;
+    --font-secondary: "Inter", sans-serif;
+    --background: url("../images-Mealify/Cheafs/team-shape.svg");
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.525rem;
+}
+
+h2 {
+    /*######### sometimes happen change */
+    font-family: var(--font-secondary);
+}
+
+h3 {
+    font-family: var(--font-secondary);
+}
+
+body:not(body:has(:target)) li a[href="#home"],
+body:has(.header:target) li a[href="#home"],
+body:has(.contact:target) li a[href="#contact"],
+body:has(.gallery:target) li a[href="#gallery"],
+body:has(.chefs:target) li a[href="#chefs"] {
+    color: var(--default-color);
+}
+
+body:not(body:has(:target)) li a[href="#home"]::before,
+body:has(.header:target) li a[href="#home"]::before,
+body:has(.contact:target) li a[href="#contact"]::before,
+body:has(.gallery:target) li a[href="#gallery"]::before,
+body:has(.chefs:target) li a[href="#chefs"]::before {
+    width: 100%;
+}
