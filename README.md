@@ -10,7 +10,7 @@ navigation.
 ---
 
 ## Live Demo 🌐
-- Check out the live demo of the project at [Mealify Site](https://omarrsakr.github.io/Mealify-Site/).
+- Check out the live demo of the project at [`Mealify Site`](https://omarrsakr.github.io/Mealify-Site/).
 
 ---
 
