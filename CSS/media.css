@@ -1,3 +1,5 @@
+/* Enhanced Media Queries for Better Responsive Design */
+
 @media screen and (min-width:1401px) {
     .container {
         max-width: 86%;
@@ -5,23 +7,19 @@
 
     .navbar .container {
         width: 100%;
-        margin-left: .625rem;
     }
 
     .header .container .part-one p {
         margin-top: 0rem;
+        width: 80%;
     }
 
     .navbar ul {
         display: flex;
     }
 
-    .navbar .container .menu-icon {
-        display: none;
-    }
-
-    .header .container .part-one p {
-        width: 80%;
+    .navbar .icon-moon .menu-icon {
+        display: none !important;
     }
 
     .chefs .container .card {
@@ -34,6 +32,13 @@
 
     .gallery .gallery-body {
         columns: 3;
+        column-gap: 1.25rem;
+        padding: 1.25rem 0rem;
+    }
+
+    .gallery .gallery-body div {
+        margin-bottom: 1.25rem;
+        break-inside: avoid;
     }
 
     .contact form input:nth-child(1),
@@ -45,7 +50,6 @@
         display: flex;
         justify-content: space-evenly;
     }
-
 }
 
 @media screen and (max-width:1400px) {
@@ -55,31 +59,21 @@
 
     .navbar .container {
         width: 90.5%;
-        margin-left: .625rem;
     }
 
     .header .container .part-one h2 {
         margin-top: 0rem;
     }
 
-    .chefs .container {
-        width: 90%;
-    }
-
-    .gallery .container {
-        width: 90%;
-    }
-
-    .contact .container {
-        width: 90%;
-    }
-
+    .chefs .container,
+    .gallery .container,
+    .contact .container,
     .footer .container {
         width: 90%;
     }
 
-    .navbar .menu-icon {
-        display: none;
+    .navbar .icon-moon .menu-icon {
+        display: none !important;
     }
 
     .chefs .container .card {
@@ -88,6 +82,13 @@
 
     .gallery .gallery-body {
         columns: 3;
+        column-gap: 1.25rem;
+        padding: 1.25rem 0rem;
+    }
+
+    .gallery .gallery-body div {
+        margin-bottom: 1.25rem;
+        break-inside: avoid;
     }
 
     .contact form input:nth-child(1),
@@ -103,7 +104,6 @@
         display: flex;
         justify-content: space-evenly;
     }
-
 }
 
 @media screen and (max-width:1200px) {
@@ -117,25 +117,15 @@
 
     .navbar .container {
         width: 88.5%;
-        margin-left: .6625rem;
     }
 
     .header .container .part-one h2 {
         margin-top: 0rem;
     }
 
-    .chefs .container {
-        width: 88.5%;
-    }
-
-    .gallery .container {
-        width: 88.5%;
-    }
-
-    .contact .container {
-        width: 88.5%;
-    }
-
+    .chefs .container,
+    .gallery .container,
+    .contact .container,
     .footer .container {
         width: 88.5%;
     }
@@ -144,8 +134,8 @@
         display: flex;
     }
 
-    .navbar .menu-icon {
-        display: none;
+    .navbar .icon-moon .menu-icon {
+        display: none !important;
     }
 
     .header {
@@ -166,7 +156,14 @@
     }
 
     .gallery .gallery-body {
-        columns: 3;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        padding: 1.25rem 0rem;
+    }
+
+    .gallery .gallery-body div {
+        margin-bottom: 0;
     }
 
     .contact form input:nth-child(1),
@@ -184,117 +181,177 @@
     }
 
     .navbar nav .navbar-list-close {
-        display: none;
+        display: none !important;
     }
-
-
 }
 
-
+/* ==================== Mobile Menu - Fixed ==================== */
 @media screen and (max-width:992px) {
     .container {
         max-width: 96.7%;
     }
 
+    /* Mobile Navigation - إصلاح شامل */
     .navbar .list {
         background-color: #FFFFFF;
-        display: none;
-        position: absolute;
-        padding: .625rem;
-        right: 0rem;
-        top: 0rem;
-        width: 40vw;
+        display: none !important; /* مخفية بشكل افتراضي */
+        position: fixed;
+        padding: 0;
+        right: -100%; /* خارج الشاشة */
+        top: 0;
+        width: 280px;
         height: 100vh;
-        border-radius: .25rem;
-        text-align: left;
-        z-index: 999;
+        z-index: 9999;
         flex-direction: column;
-        transition: 0.5s;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        overflow-y: auto;
     }
 
-    .menu-checkbox:checked~.list {
-        display: block;
+    /* عرض القائمة عند التفعيل */
+    .navbar .list[style*="right: 0"] {
+        display: flex !important;
     }
 
+    /* تنسيق زر الإغلاق */
+    .navbar nav .navbar-list-close {
+        display: block !important;
+        padding: 3rem;
+        text-align: right;
+        border-bottom: 1px solid #f0f0f0;
+        margin-bottom: 0;
+    }
 
+    .navbar nav .navbar-list-close i {
+        color: var(--color-tertiary);
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
 
+    .navbar nav .navbar-list-close i:hover {
+        color: var(--color-primary);
+        transform: scale(1.1);
+    }
+
+    /* تنسيق قائمة الروابط */
     .navbar .list ul {
         flex-direction: column;
         padding: 0;
         margin: 0;
-        gap: 0rem;
-
+        gap: 0;
+        width: 100%;
     }
 
     .navbar .list ul li {
         margin: 0;
         width: 100%;
-
     }
-
-
 
     .navbar .list ul li a {
-        padding: .625rem .9375rem;
-    }
-
-    .navbar .icon-moon .menu-icon {
         display: block;
-        color: var(--default-color);
-        font-size: 1.5625rem;
-        cursor: pointer;
+        padding: 1rem 1.5rem;
+        color: var(--color-tertiary);
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.3s ease;
+        font-size: 1rem;
     }
 
+    .navbar .list ul li a:hover {
+        background-color: #f8f9fa;
+        color: var(--color-primary);
+        padding-left: 2rem;
+    }
 
+    .navbar .list ul li a.active {
+        background-color: var(--color-primary);
+        color: white !important;
+        font-weight: 600;
+    }
 
+    /* تنسيق أيقونة القائمة */
+    .navbar .icon-moon .menu-icon {
+        display: block !important;
+        color: var(--default-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .navbar .icon-moon .menu-icon:hover {
+        color: var(--color-primary);
+        transform: scale(1.1);
+    }
+
+    /* Enhanced Header Layout */
     .header {
         text-align: center;
     }
 
     .header .container {
         flex-direction: column-reverse;
-        gap: 1.25rem;
+        gap: 2rem;
         align-items: center;
         justify-content: center;
-
     }
 
     .header .container .part-one,
-    .header .container .img {
-        width: 100%;
-    }
-
     .header .container .photo-home {
         width: 100%;
     }
 
     .header .container .part-one h2 {
         margin-top: 0rem;
+        font-size: 3.5rem;
     }
 
     .header .container .part-one .button-links {
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 
     .header .container .part-one .book {
         border-radius: 1.875rem;
     }
 
+    /* Enhanced Chef Cards */
     .chefs .container .card {
-        width: calc((100% - 3.125rem) / 2);
+        width: calc((100% - 1.875rem) / 2);
     }
 
     .chefs .container .card .card-body {
         text-align: center;
     }
 
+    /* Original Gallery Column Layout */
     .gallery .gallery-body {
         columns: 2;
+        column-gap: 1.25rem;
+        padding: 1.25rem 0rem;
     }
 
+    .gallery .gallery-body div {
+        margin-bottom: 1.25rem;
+        break-inside: avoid;
+    }
+
+    /* Enhanced Contact Form */
     .contact form input:nth-child(1),
     .contact form input:nth-child(2) {
         width: 100%;
+    }
+
+    .contact .container .details .contact-item {
+        width: calc((100% - .9375rem)/2);
+    }
+
+    /* Enhanced Footer Layout */
+    .footer .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
     }
 
     .footer .container .part-one {
@@ -312,75 +369,88 @@
         width: 100%;
     }
 
-    .footer .container {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
     .footer .container .part-one .social-links {
         display: flex;
         justify-content: space-evenly;
     }
-
-    .navbar nav .navbar-list-close {
-        display: block;
-    }
 }
-
-
 
 @media screen and (max-width:768px) {
     .container {
         max-width: 93.8%;
     }
 
+    /* Enhanced Mobile Navigation */
+    .navbar .list {
+        width: 300px;
+    }
+
     .header .container {
         margin: 5.9375rem 0rem 0rem 0rem;
     }
 
-    .header .container .part-one,
-    .header .container .img {
-        width: 100%;
-    }
-
-    .header .container .photo-home {
-        width: 100%;
-    }
-
     .header .container .part-one h2 {
+        font-size: 3rem;
         margin-top: 0rem;
     }
 
+    .header .container .part-one p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .header .container .part-one .button-links {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    /* Single Column Chef Cards */
     .chefs .container .card {
         width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .chefs .container .cards {
+        justify-content: center;
     }
 
     .chefs .container .card .card-body {
         text-align: center;
     }
 
+    /* Single Column Gallery */
     .gallery .gallery-body {
-        columns: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 1.25rem 0rem;
     }
 
+    /* Single Column Contact Details */
     .contact .container .details {
         display: flex;
         flex-direction: column;
+        gap: 1rem;
     }
 
     .contact .container .details .contact-item {
         width: 100%;
     }
 
-
+    /* Enhanced Footer Mobile Layout */
     .footer .container .part-one {
         order: 1;
         width: 100%;
+        text-align: center;
+        margin-bottom: 1.5rem;
     }
 
     .footer .container .part-three {
         order: 3;
         width: 100%;
+        margin-top: 1.5rem;
     }
 
     .footer .container .part-two {
@@ -388,16 +458,10 @@
         width: 100%;
     }
 
-    .footer .container {
-        display: flex;
-    }
-
     .footer .container .part-one .social-links {
         display: flex;
         justify-content: space-evenly;
     }
-
-
 }
 
 @media screen and (max-width:576px) {
@@ -405,62 +469,59 @@
         max-width: 93.7%;
     }
 
+    /* Full Width Mobile Navigation */
+    .navbar .list {
+        width: 320px;
+    }
+
+    /* Enhanced Mobile Header */
+    .header .container .part-one h2 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
     .header .container .button-links {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        gap: 1.25rem;
-    }
-
-    .header {
-        text-align: center;
-    }
-
-    .header .container {
-        flex-direction: column-reverse;
-        gap: 1.25rem;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
 
+    .header .container .part-one .book {
+        border-radius: 1.875rem;
+        padding: .75rem 1.5rem;
+        width: fit-content;
+    }
+
+    .header .container .part-one .watch {
+        width: fit-content;
+    }
+
+    .header .container .part-one,
+    .header .container .photo-home {
+        width: 100%;
+    }
+
+    .header .container .photo-home img {
+        width: 85%;
     }
 
     .chefs .container .card .card-body {
         text-align: center;
     }
 
-    .header .container .part-one,
-    .header .container .img {
-        width: 100%;
-    }
-
-    .header .container .part-one h2 {
-        margin-top: 0rem;
-    }
-
-    .header .container .photo-home {
-        width: 100%;
-    }
-
-    .header .container .part-one .button-links {
-        justify-content: center;
-    }
-
-    .header .container .part-one .book {
-        border-radius: 1.875rem;
-        padding: 10px 20px;
-        display: flex;
-        position: relative;
-        left: 15px;
-
-    }
-
+    /* Enhanced Mobile Footer */
     .footer .container .part-two form {
         display: flex;
         flex-direction: column;
+        gap: .75rem;
     }
 
-    .footer .container .part-two button {
-        padding: .625rem;
+    .footer .container .part-two form button {
+        padding: .75rem;
+        font-size: .9rem;
     }
 
     .footer .container .part-two h3 {
@@ -468,8 +529,279 @@
     }
 
     .footer .container .part-three {
-        padding-top: 5.9375rem;
+        padding-top: 2rem;
     }
 
+    .footer .container .part-two ul {
+        gap: .5rem;
+    }
 
+    .footer .container .part-two ul li {
+        width: 100%;
+    }
+
+    .footer .container .part-two ul li a {
+        padding: .5rem;
+        font-size: .9rem;
+    }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width:480px) {
+    .container {
+        max-width: 95%;
+        padding: 1.5rem .25rem;
+    }
+
+    .navbar .list {
+        width: 90vw;
+        max-width: 350px;
+    }
+
+    .header .container .part-one h2 {
+        font-size: 2.2rem;
+    }
+
+    .title h2 {
+        font-size: .75rem;
+    }
+
+    .title p {
+        font-size: 2.5rem;
+    }
+
+    .contact form {
+        padding: 1rem;
+    }
+
+    .contact form input,
+    .contact form textarea {
+        padding: .75rem;
+        font-size: .9rem;
+    }
+
+    .footer .container .part-one .title a {
+        font-size: 1.5rem;
+    }
+
+    .footer .container .part-one .social-links i {
+        padding: .5rem;
+        font-size: 1.25rem;
+    }
+}
+
+/* Landscape Orientation for Mobile Devices */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .header .container {
+        flex-direction: row;
+        align-items: center;
+        margin: 3rem 0 0 0;
+    }
+
+    .header .container .part-one {
+        width: 60%;
+    }
+
+    .header .container .photo-home {
+        width: 40%;
+    }
+
+    .header .container .part-one h2 {
+        font-size: 2rem;
+    }
+
+    .header .container .part-one p {
+        font-size: .9rem;
+        margin: .75rem 0;
+    }
+
+    .header .container .button-links {
+        flex-direction: row;
+        gap: .75rem;
+    }
+}
+
+/* Remove conflicting gallery order styles */
+.gallery .gallery-body .Pizza,
+.gallery .gallery-body .Levitation,
+.gallery .gallery-body .Beef,
+.gallery .gallery-body .Frittata,
+.gallery .gallery-body .Burger,
+.gallery .gallery-body .Crispy,
+.gallery .gallery-body .kebab {
+    order: unset;
+}
+
+/* ==================== Desktop Menu Override ==================== */
+@media screen and (min-width: 993px) {
+    .navbar .list {
+        display: flex !important;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        right: auto !important;
+        flex-direction: row !important;
+        transition: none !important;
+    }
+
+    .navbar .list ul {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 1.5rem !important;
+        align-items: center !important;
+    }
+
+    .navbar .list ul li a {
+        padding: 0.5rem 0 !important;
+        border-bottom: none !important;
+        background: transparent !important;
+        display: inline-block !important;
+    }
+
+    .navbar nav .navbar-list-close {
+        display: none !important;
+    }
+
+    .navbar .icon-moon .menu-icon {
+        display: none !important;
+    }
+}
+
+/* ==================== Menu Overlay ==================== */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* ==================== Lightbox Styles - مُحسن ==================== */
+.simple-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.simple-lightbox.active {
+    opacity: 1;
+}
+
+.lightbox-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.lightbox-container {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.simple-lightbox.active .lightbox-container {
+    transform: scale(1);
+}
+
+.lightbox-img {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+    display: block;
+}
+
+.lightbox-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.lightbox-title {
+    margin: 0 0 0.5rem 0;
+    color: var(--default-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.lightbox-desc {
+    margin: 0;
+    color: var(--color-tertiary);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* ==================== Toast Messages ==================== */
+.toast-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 10001;
+    max-width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toast-success {
+    background: #28a745;
+}
+
+.toast-error {
+    background: #dc3545;
+}
+
+.toast-info {
+    background: #17a2b8;
+}
+
+/* ==================== Mobile Responsive Fixes ==================== */
+@media screen and (max-width: 768px) {
+    .toast-message {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+    
+    .lightbox-container {
+        max-width: 95%;
+        margin: 10px;
+    }
+    
+    .lightbox-img {
+        max-height: 50vh;
+    }
+    
+    .lightbox-content {
+        padding: 1rem;
+    }
 }

@@ -43,46 +43,30 @@
             <div class="logo">
                 <a href="#home">Mealify</a>
             </div>
-            <input type="checkbox" id="menuToggle" class="menu-checkbox" />
-            <nav id="menu" class="list">
+            <nav id="menu" class="list" aria-expanded="false">
                 <div class="navbar-list-close">
-                    <label for="menuToggle"><i class="fa-solid fa-xmark fa-xl"></i></label>
+                    <i class="fa-solid fa-xmark fa-xl"></i>
                 </div>
                 <ul>
-                    <li><a href="#home" onclick="document.getElementById('menuToggle').checked = false;">Home</a></li>
-                    <li><a href="#chefs" onclick="document.getElementById('menuToggle').checked = false;">Chefs</a></li>
-                    <li><a href="#gallery" onclick="document.getElementById('menuToggle').checked = false;">Gallery</a>
-                    </li>
-                    <li><a href="#contact" onclick="document.getElementById('menuToggle').checked = false;">Contact</a>
-                    </li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#chefs">Chefs</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="icon-moon">
-
                 <label for="mode" class="light-mode">
                     <i class="fa-solid fa-sun"></i>
                 </label>
                 <label for="mode" class="dark-mode">
                     <i class="fa-solid fa-moon"></i>
                 </label>
-                <input type="checkbox" id="mode" hidden aria-hidden />
-                <label class="menu-icon" for="menuToggle">
+                <input type="checkbox" id="mode" hidden aria-hidden="true" />
+                <label class="menu-icon" aria-label="Toggle menu">
                     <i class="fa-solid fa-bars"></i>
                 </label>
-
             </div>
         </div>
-        <!-- & Just a simple addition()when you click in anywhere on the page || it will the .list(#menu) disappear from Javascript => may be don't need it -->
-        <script>
-            document.addEventListener('click', function (event) {
-                const checkbox = document.getElementById('menuToggle');
-                const menu = document.getElementById('menu');
-                if (menu.contains(event.target) || checkbox.contains(event.target)) {
-                    return;
-                }
-                checkbox.checked = false;
-            });
-        </script>
     </header>
     <!-- !######### Header -->
     <div id="home" class="header">
@@ -189,52 +173,52 @@
             <div class="gallery-body">
                 <div class="Pizza">
                     <img src="./images-Mealify/Gallery/meal-1.jpg" alt="meal 1" />
-                    <div class="layer">
+                    <a class="layer">
                         <h2>Pizza</h2>
                         <p>Hawaiian pizza with ham and pineapple</p>
-                    </div>
+                    </a>
                 </div>
                 <div class="Levitation">
                     <img src="./images-Mealify/Gallery/meal-4.jpg" alt="meal 4" />
-                    <div class="layer">
+                    <a class="layer">
                         <h2>Levitation pizza</h2>
                         <p>Levitation pizza on black background.</p>
-                    </div>
+                    </a>
                 </div>
                 <div class="Beef">
-                    <img src="./images-Mealify/Gallery/meal-2.jpg" alt="meal 2" />-
-                    <div class="layer">
+                    <img src="./images-Mealify/Gallery/meal-2.jpg" alt="meal 2" />
+                    <a class="layer">
                         <h2>Beef steaks</h2>
                         <p>Tasty beef steaks flying above cast iron grate with fire flames.</p>
-                    </div>
+                    </a>
                 </div>
                 <div class="Frittata">
                     <img src="./images-Mealify/Gallery/meal-7.jpg" alt="meal 7" />
-                    <div class="layer">
+                    <a class="layer">
                         <h2>Frittata</h2>
                         <p>Frittata or potato pie in a ceramic plate</p>
-                    </div>
+                    </a>
                 </div>
                 <div class="Burger">
                     <img src="./images-Mealify/Gallery/meal-3.jpg" alt="meal 3" />
-                    <div class="layer">
+                    <a class="layer">
                         <h2>Burger</h2>
                         <p>grass fed bison hamburger with chips & beer</p>
-                    </div>
+                    </a>
                 </div>
                 <div class="Crispy">
                     <img src="./images-Mealify/Gallery/meal-5.jpg" alt="meal 5" />
-                    <div class="layer">
+                    <a class="layer">
                         <h2>Crispy Fried Chicken</h2>
                         <p>Golden brown chicken legs with a crunchy coating and juicy meat</p>
-                    </div>
+                    </a>
                 </div>
                 <div class="kebab">
                     <img src="./images-Mealify/Gallery/meal-6.jpg" alt="meal 6" />
-                    <div class="layer">
+                    <a class="layer">
                         <h2>Lyulya kebab</h2>
                         <p>Tender and juicy skewers of ground lamb or beef, flavored with aromatic spices and herbs</p>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -257,7 +241,7 @@
             <div class="details">
                 <div class="contact-item">
                     <div class="icon">
-                        <i class="fa-solid fa-map"></i>
+                        <i class="fa-sharp fa-solid fa-location-dot"></i>
                     </div>
                     <div class="text">
                         <h3>Our Address</h3>
@@ -314,9 +298,9 @@
                         <img src="./images-Mealify/favicon.png" alt="icon" />
                         <a href="#home">Mealify<span>.</span></a>
                     </div>
-                    <p>
-                        Mealify is a restaurant landing page that offers a delicious dining experience to its customers.
-                    </p>
+                    <p>Don't miss out on our latest menu updates and exclusive offers - join our newsletter today and
+                        stay
+                        up-to-date with all things Mealify!</p>
                 </div>
                 <div class="social">
                     <h3>Social Media</h3>
@@ -331,10 +315,8 @@
             <!-- *################ part two -->
             <div class="part-two">
                 <h3>Subscribe our Newsletter</h3>
-                <p>
-                    Don't miss out on our latest menu updates and exclusive offers - join our newsletter today and stay
-                    up-to-date with all things Mealify!
-                </p>
+                <p>Don't miss out on our latest menu updates and exclusive offers - join our newsletter today and stay
+                    up-to-date with all things Mealify!</p>
                 <form>
                     <input type="email" placeholder="Enter Your Email Address" />
                     <button type="submit"><i class="fa-solid fa-envelope"></i>Subscribe</button>
@@ -366,7 +348,7 @@
                 <h3>Get In Touch</h3>
                 <div class="contacts">
                     <div class="heading-1">
-                        <span><i class="fa-sharp fa-solid fa-location-dot"></i></span>
+                        <i class="fa-sharp fa-solid fa-location-dot"></i>
                         <p>A108 Adam Street, New York, NY 535022</p>
                     </div>
                     <div class="heading-2">
@@ -381,6 +363,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="./JS/main.js"></script>
 </body>
 
 </html>
